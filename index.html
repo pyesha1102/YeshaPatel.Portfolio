@@ -5,98 +5,219 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yesha's UI/UX work</title>
   <style>
+    /* General Body Styling */
     body {
       font-family: "Roboto", Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #fef9f3;
-      color: #291752; /* Adjust text color for contrast */
-
+      background-color: #e3e0e2; /* Light warm beige */
+      color: #291752; /* Deep purple for contrast */
     }
+
+    /* Header Styling */
     header {
-      background: linear-gradient(to right, #6a11cb, #2575fc);
+      background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient background */
       color: white;
-      padding: 20px 0;
+      padding: 20px 20px;
       text-align: center;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
+
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem; /* Large and impactful */
+      font-family: Optima, sans-serif;
       margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     }
+
     header p {
-      margin: 10px 0 0;
-      font-size: 1.2rem;
+      margin: 15px 0 0;
+      font-family: "Helvetica Neue", sans-serif;
+      font-size: 1.2rem; /* Slightly smaller subtitle */
       font-style: italic;
+      opacity: 0.9;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     }
+
+    /* Main Container */
     .container {
       max-width: 1200px;
       margin: 20px auto;
       padding: 0 20px;
     }
+
+    /* Project Section Styling */
     .project {
       margin-bottom: 50px;
       border: 1px solid #ddd;
       border-radius: 10px;
-      background-color: #fdf3e6;
+      background-color: #d4cce1; /* Clean white background */
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       overflow: hidden;
+      padding: 20px;
     }
+
     .project h2 {
-      background: #6a11cb;
-      color: white;
-      margin: 0;
-      padding: 10px 20px;
       font-size: 1.8rem;
+      color: white;
+      background: #6a11cb; /* Match header gradient color */
+      padding: 10px 20px;
+      margin: 0 0 10px;
       text-transform: uppercase;
     }
-    .images {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      padding: 20px;
-      justify-content: center;
+
+    .project-description {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1rem;
+      color: #6b2966;
+      line-height: 1.6;
+      margin-bottom: 10px;
+      text-align: justify;
     }
-    .images img {
-      width: 250px;
-      height: auto;
-      border: 1px solid #ddd;
+
+    /* Project Link Styling */
+    .project-link {
+      display: inline-block;
+      color: #6a11cb;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 10px 0;
+      transition: color 0.3s ease;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+      color: #4a0d8b; /* Slightly darker on hover */
+    }
+
+    /* Horizontal Scrollbar for Images */
+    .horizontal-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding: 10px 0;
+      scroll-behavior: smooth;
+    }
+
+    .horizontal-scroll img {
+      height: 300px; /* Fixed height for uniformity */
+      width: auto;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .images img:hover {
+
+    .horizontal-scroll img:hover {
       transform: scale(1.1);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
+
+    /* Scrollbar Styling */
+    .horizontal-scroll::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .horizontal-scroll::-webkit-scrollbar-thumb {
+      background-color: #6a11cb;
+      border-radius: 10px;
+    }
+
+    .horizontal-scroll::-webkit-scrollbar-thumb:hover {
+      background-color: #4a0d8b;
+    }
+
+    .horizontal-scroll::-webkit-scrollbar-track {
+      background: #f0f0f0;
+    }
+
+    /* Footer Styling */
     footer {
       text-align: center;
-      padding: 20px 0;
+      padding: 5px 0;
       background: #6a11cb;
       color: white;
       font-size: 0.9rem;
       margin-top: 30px;
     }
+
     footer a {
       color: #ffd700;
       text-decoration: none;
+      font-weight: bold;
     }
+
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* Media Queries for Larger Screens (Tablet and Desktop) */
+@media (min-width: 768px) {
+  header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+
+  header p {
+    font-size: 1.2rem;
+  }
+
+  .container {
+    max-width: 750px; /* Centered container for tablets */
+    padding: 0 20px;
+  }
+
+  .project h2 {
+    font-size: 1.8rem;
+  }
+
+  .project-description {
+    font-size: 1rem;
+  }
+
+  .horizontal-scroll img {
+    height: 250px; /* Slightly larger on tablets */
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1200px; /* Centered container for desktops */
+  }
+
+  .horizontal-scroll img {
+    height: 300px; /* Larger images on desktop */
+  }
+}
+
   </style>
 </head>
 <body>
   <header>
-    <h1>My UI/UX Portfolio</h1>
-    <p>Designing experiences, one project at a time.</p>
+    <h1>Where Creativity Meets Functionality</h1>
+    <p>Explore my journey as a UI/UX designer through innovative projects and intuitive designs.</p>
   </header>
 
   <div class="container">
     <!-- CookMood Section -->
     <div class="project">
       <h2>CookMood</h2>
-      <div class="images">
+      <p class="project-description">
+        <strong>Purpose:</strong> CookMood is a cooking recipe app that provides step-by-step instructions for a variety of recipes. It also offers creative tips for repurposing leftovers, making it a practical tool for home cooks. This app was my first-term project and highlights my early exploration of UI/UX design principles.
+      </p>
+      <p>
+        <a href="https://xd.adobe.com/view/d7d0ad6c-ea6d-418c-88ea-16d77199acb5-8283/" target="_blank" class="project-link">
+          ➤ View CookMood Prototype on Adobe XD
+        </a>
+      </p>
+      </p>
+      <div class="horizontal-scroll">
         <img src="CookMood/CM_Welcome.png" alt="CookMood Welcome">
         <img src="CookMood/CM_Home.png" alt="CookMood Home">
         <img src="CookMood/CM_Signup.png" alt="CookMood Signup">
@@ -112,7 +233,14 @@
     <!-- GreenNest Section -->
     <div class="project">
       <h2>GreenNest</h2>
-      <div class="images">
+      <p class="project-description">
+        <strong>Purpose:</strong> GreenNest is a plant shop app designed for both advanced and beginner plant enthusiasts. It features an extensive collection of indoor and outdoor plants, along with a notification filter to remind users when to water their plants. This app was my final-term project, showcasing advanced UI/UX design and usability testing.
+      </p>
+      <p>
+        <a href="https://xd.adobe.com/view/a9e7e878-5d72-47c2-905b-553c707ceb84-fcb4/" target="_blank" class="project-link">
+          ➤ View GreenNest Prototype on Adobe XD
+        </a>
+      <div class="horizontal-scroll">
         <img src="GreenNest/GN_Welcome.png" alt="GreenNest Welcome">
         <img src="GreenNest/GN_Signup.png" alt="GreenNest Signup">
         <img src="GreenNest/GN_Home.png" alt="GreenNest Home">
@@ -128,11 +256,20 @@
         <img src="GreenNest/GN_Logout.png" alt="GreenNest Logout">
       </div>
     </div>
+    
 
     <!-- MovieHub Section -->
     <div class="project">
       <h2>MovieHub</h2>
-      <div class="images">
+      <p class="project-description">
+        <strong>Purpose:</strong> MovieHub is an app that provides information on upcoming movies, including detailed descriptions, user reviews, and ratings. This project was part of my midterm exam and demonstrates my ability to design data-driven, interactive interfaces for entertainment platforms.
+      </p>
+      <p>
+        <a href="https://xd.adobe.com/view/19488c99-0807-47fc-a172-e484efdd4b84-4c1b/" target="_blank" class="project-link">
+          ➤ View MovieHub Prototype on Adobe XD
+        </a>
+      </p>
+      <div class="horizontal-scroll">
         <img src="MovieHub/MH_Welcome.png" alt="MovieHub Welcome">
         <img src="MovieHub/MH_Home.png" alt="MovieHub Home">
         <img src="MovieHub/MH_Nowplaying.png" alt="MovieHub Now Playing">
@@ -145,13 +282,22 @@
     <!-- CoffeeShop Section -->
     <div class="project">
       <h2>CoffeeShop</h2>
-      <p style="text-align: center; padding: 20px;">Coming Soon...</p>
+      <p class="project-description">
+        <strong>Purpose:</strong> CoffeeShop is a class assignment focused on enhancing the user experience for the add-to-cart feature. I implemented functionality where users can directly add items to the cart by clicking on the price. This project highlights my problem-solving and quick prototyping skills.
+      </p>
+      <p>
+        <a href="https://xd.adobe.com/view/7d41a176-7854-4fbe-a13b-508cff2575eb-2812/" target="_blank" class="project-link">
+          ➤ View CoffeeShop Prototype on Adobe XD
+        </a>
+      </p>
+      <div class="horizontal-scroll">
+        <img src="CoffeeShop/CS_Catalogue.png" alt="CoffeeShop Catalouge">
+        <img src="CoffeeShop/CS_Detail.png" alt="CoffeeShop Detail">   
+      </div>
     </div>
-  </div>
 
   <footer>
     <p>&copy; 2025 My UI/UX Portfolio | Designed with ❤️ by Me</p>
-    <p>Visit my <a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a> for more details.</p>
   </footer>
 </body>
 </html>
